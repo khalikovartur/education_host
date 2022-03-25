@@ -81,14 +81,14 @@
   $('#module-contents').sortable({
     stop: function(event, ui) {
       contents_order = {};
-      $('#module-contents').children().each(function() {
+      $('#module-contents').children().each(function(){
         // associate the module's id with its order
         contents_order[$(this).data('id')] = $(this).index();
       });
 
-      $ajax({
+      $.ajax({
         type: 'POST', 
-        url: '{% url "content_order" %}'
+        url: '{% url "content_order" %}',
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         data: JSON.stringify(contents_order),
