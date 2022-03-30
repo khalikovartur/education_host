@@ -6,7 +6,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from courses.models import Course
-import students
 from .forms import CourseEnrollForm
 
 
